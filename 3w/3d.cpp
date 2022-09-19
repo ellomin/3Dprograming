@@ -64,7 +64,7 @@ int main(void)
 
         int i;
 
-        GLfloat x = .0f; GLfloat y = .0f; GLfloat radius = .735f;
+        GLfloat x = .0f; GLfloat y = .0f; GLfloat radius = 1.0;
         int trainleAmount = 40;
 
         GLfloat twicePi = 2.0f * PI;
