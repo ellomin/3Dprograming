@@ -69,7 +69,7 @@ int main(void)
 
         GLfloat twicePi = 2.0f * PI;
 
-        glBegin(GL_TRIANGLE_FAN);
+        glBegin(GL_LINE_STRIP);
         glColor3ub(43, 78, 88);
         glVertex2f(x, y);
         for (i = 0; i <= trainleAmount; i++)
