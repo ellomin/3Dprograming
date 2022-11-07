@@ -1,89 +1,106 @@
 #pragma once
 
+// 자료구조형 vec3
 struct vec3
 {
-	float x;
-	float y;
-	float z;
+	// x,y,x 좌표 선언
+	float vec[3];
 
+	// x,y,z 좌표의 초기값
 	vec3()
 	{
-		x = 0;
-		y = 0;
-		z = 0;
+		vec[0] = 0;
+		vec[1] = 0;
+		vec[2] = 0;
 	}
-	vec3(float x_, float y_, float z_)
+
+	// 초기화
+	vec3(float x, float y, float z)
 	{
-		x = x_;
-		y = y_;
-		z = z_;
+		vec[0] = x;
+		vec[1] = y;
+		vec[2] = z;
 	}
-	void printvec3();
 };
 
+// vec3 연산자 오버로딩
 vec3 operator*(vec3 a, vec3 b)
 {
-	vec3 result(a.x * b.x, a.y * b.y, a.z * b.z);
+	// 곱셈 연산
+	vec3 result(a.vec[0] * b.vec[0], a.vec[1] * b.vec[1], a.vec[2] * b.vec[2]);
 	return result;
 }
 
+// 자료구조형 mat3
 struct mat3
 {
-	float a[3][3];
+	// 3x3 행렬 선언
+	float mat[3][3];
 
+	// 초기값 설정
 	mat3()
 	{
-		a[0][0] = 0;
-		a[0][1] = 0;
-		a[0][2] = 0;
-		a[1][0] = 0;
-		a[1][1] = 0;
-		a[1][2] = 0;
-		a[2][0] = 0;
-		a[2][1] = 0;
-		a[2][2] = 0;
+		mat[0][0] = 0;
+		mat[0][1] = 0;
+		mat[0][2] = 0;
+
+		mat[1][0] = 0;
+		mat[1][1] = 0;
+		mat[1][2] = 0;
+
+		mat[2][0] = 0;
+		mat[2][1] = 0;
+		mat[2][2] = 0;
 
 	}
-	mat3(float a_, float b_, float c_, float d_, float e_, float f_, float g_, float h_, float i_)
+
+	// 초기화
+	mat3(float a, float b, float c, float d, float e, float f, float g, float h, float i)
 	{
-		a[0][0] = a_;
-		a[0][1] = b_;
-		a[0][2] = c_;
-		a[1][0] = d_;
-		a[1][1] = e_;
-		a[1][2] = f_;
-		a[2][0] = g_;
-		a[2][1] = h_;
-		a[2][2] = i_;
-	}
-	void printmat3();
+		mat[0][0] = a;
+		mat[0][1] = b;
+		mat[0][2] = c;
 
+		mat[1][0] = d;
+		mat[1][1] = e;
+		mat[1][2] = f;
+
+		mat[2][0] = g;
+		mat[2][1] = h;
+		mat[2][2] = i;
+	}
 };
 
+// mat3 연산자 오버로딩
 mat3 operator*(mat3 a, mat3 b)
 {
-	mat3 r;
+	mat3 mat;
 
-	r.a[0][0] = (a.a[0][0] * b.a[0][0]) + (a.a[0][1] * b.a[1][0]) + (a.a[0][2] * b.a[2][0]);
-	r.a[0][1] = (a.a[0][0] * b.a[0][1]) + (a.a[0][1] * b.a[1][1]) + (a.a[0][2] * b.a[2][1]);
-	r.a[0][2] = (a.a[0][0] * b.a[0][2]) + (a.a[0][1] * b.a[1][2]) + (a.a[0][2] * b.a[2][2]);
+	mat.mat[0][0] = (a.mat[0][0] * b.mat[0][0]) + (a.mat[0][1] * b.mat[1][0]) + (a.mat[0][2] * b.mat[2][0]);
+	mat.mat[0][1] = (a.mat[0][0] * b.mat[0][1]) + (a.mat[0][1] * b.mat[1][1]) + (a.mat[0][2] * b.mat[2][1]);
+	mat.mat[0][2] = (a.mat[0][0] * b.mat[0][2]) + (a.mat[0][1] * b.mat[1][2]) + (a.mat[0][2] * b.mat[2][2]);
 
-	r.a[1][0] = (a.a[1][0] * b.a[0][0]) + (a.a[1][1] * b.a[1][0]) + (a.a[1][2] * b.a[2][0]);
-	r.a[1][1] = (a.a[1][0] * b.a[0][1]) + (a.a[1][1] * b.a[1][1]) + (a.a[1][2] * b.a[2][1]);
-	r.a[1][2] = (a.a[1][0] * b.a[0][2]) + (a.a[1][1] * b.a[1][2]) + (a.a[1][2] * b.a[2][2]);
+	mat.mat[1][0] = (a.mat[1][0] * b.mat[0][0]) + (a.mat[1][1] * b.mat[1][0]) + (a.mat[1][2] * b.mat[2][0]);
+	mat.mat[1][1] = (a.mat[1][0] * b.mat[0][1]) + (a.mat[1][1] * b.mat[1][1]) + (a.mat[1][2] * b.mat[2][1]);
+	mat.mat[1][2] = (a.mat[1][0] * b.mat[0][2]) + (a.mat[1][1] * b.mat[1][2]) + (a.mat[1][2] * b.mat[2][2]);
 
-	r.a[2][0] = (a.a[2][0] * b.a[0][0]) + (a.a[2][1] * b.a[1][0]) + (a.a[2][2] * b.a[2][0]);
-	r.a[2][1] = (a.a[2][0] * b.a[0][1]) + (a.a[2][1] * b.a[1][1]) + (a.a[2][2] * b.a[2][1]);
-	r.a[2][2] = (a.a[2][0] * b.a[0][2]) + (a.a[2][1] * b.a[1][2]) + (a.a[2][2] * b.a[2][2]);
-
-	return r;
+	mat.mat[2][0] = (a.mat[2][0] * b.mat[0][0]) + (a.mat[2][1] * b.mat[1][0]) + (a.mat[2][2] * b.mat[2][0]);
+	mat.mat[2][1] = (a.mat[2][0] * b.mat[0][1]) + (a.mat[2][1] * b.mat[1][1]) + (a.mat[2][2] * b.mat[2][1]);
+	mat.mat[2][2] = (a.mat[2][0] * b.mat[0][2]) + (a.mat[2][1] * b.mat[1][2]) + (a.mat[2][2] * b.mat[2][2]);
+	
+	// 결과값 m 반환
+	return mat;
 }
 
+// vec3, mat3 연산자 오버로딩
 vec3 operator*(vec3 a, mat3 b)
 {
-	vec3 r;
-	r.x = (a.x * b.a[0][0]) + (a.y * b.a[1][0]) + (a.z * b.a[2][0]);
-	r.y = (a.x * b.a[0][1]) + (a.y * b.a[1][1]) + (a.z * b.a[2][1]);
-	r.z = (a.x * b.a[0][2]) + (a.y * b.a[1][2]) + (a.z * b.a[2][2]);
-	return r;
+	vec3 vec;
+	
+	vec.vec[0] = (a.vec[0] * b.mat[0][0]) + (a.vec[1] * b.mat[1][0]) + (a.vec[2] * b.mat[2][0]);
+	vec.vec[1] = (a.vec[0] * b.mat[0][1]) + (a.vec[1] * b.mat[1][1]) + (a.vec[2] * b.mat[2][1]);
+	vec.vec[2] = (a.vec[0] * b.mat[0][2]) + (a.vec[1] * b.mat[1][2]) + (a.vec[2] * b.mat[2][2]);
+
+	// 결과값 v 반환
+	return vec;
 }
