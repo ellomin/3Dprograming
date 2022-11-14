@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="mat3">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAACgAgAABAAAA=</HashCode>
+      <FileName>MuSoenMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="vec3">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAABAAAAAAAAAAAIAAAAAAAACBAgAAAAAAA=</HashCode>
+      <FileName>MuSoenMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="vec4">
+    <Position X="6.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAIAAAAAAAACBAgEAAAAAA=</HashCode>
+      <FileName>MuSoenMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="mat4">
+    <Position X="4.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAEAAAAAAAAAAAAAAAAACgAgAABAAAA=</HashCode>
+      <FileName>MuSoenMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
