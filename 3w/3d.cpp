@@ -2,7 +2,6 @@
 #include <glm/glm.hpp>
 #define PI 3.14159265358979323846
 
-
 #pragma comment(lib, "OpenGL32")
 
 static void error_callback(int error, const char* description)
