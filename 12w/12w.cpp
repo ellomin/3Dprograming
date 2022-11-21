@@ -4,7 +4,7 @@
 #include <string>
 #include <GLFW/glfw3.h>
 #include "MuSoenMath.h"
-#define PI 3.141592
+#define PI 3.14159265358979323846
 #pragma comment(lib, "OpenGL32")
 
 using namespace std;
